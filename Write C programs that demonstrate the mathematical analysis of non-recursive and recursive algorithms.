@@ -1,0 +1,23 @@
+#include <stdio.h>
+int nonRecursiveAlgorithm(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+int recursiveAlgorithm(int n) {
+    if (n == 0) {
+        return 0;
+    } else {
+        return n + recursiveAlgorithm(n - 1);
+    }
+}
+int main() {
+    int n = 5;
+    int resultNonRecursive = nonRecursiveAlgorithm(n);
+    printf("Result of non-recursive algorithm: %d\n", resultNonRecursive);
+    int resultRecursive = recursiveAlgorithm(n);
+    printf("Result of recursive algorithm: %d\n", resultRecursive);
+    return 0;
+}
