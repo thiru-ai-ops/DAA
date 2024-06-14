@@ -1,0 +1,40 @@
+#include <stdio.h>
+int masterTheorem(int a, int b, int k, int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return a * masterTheorem(a, b, k, n / b) + k * n;
+    }
+}
+int main() {
+    int a = 2, b = 2, k = 2, n = 8;
+    printf("Result using Master Theorem: %d\n", masterTheorem(a, b, k, n));
+    return 0;
+}
+#include <stdio.h>
+int substitutionMethod(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return 2 * substitutionMethod(n - 1) + 2 * n;
+    }
+}
+int main() {
+    int n = 4;
+    printf("Result using Substitution Method: %d\n", substitutionMethod(n));
+    return 0;
+}
+#include <stdio.h>
+int iterationMethod(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = 2 * result + 2 * i;
+    }
+    return result;
+}
+int main() {
+    int n = 3;
+    printf("Result using Iteration Method: %d\n", iterationMethod(n));
+    return 0;
+}
+
